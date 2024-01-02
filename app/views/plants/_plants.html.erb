@@ -1,10 +1,12 @@
+<% @plants.each do |plant| %>
 <div class="card">
-  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id) %>
+  <%= link_to image_tag(plant.image, class: :card__img ), plant_path(plant.id) %>
   <div class="card__body">
-    <%= link_to prototype.title, prototype_path(prototype.id), class: :card__title%>
+    <%= link_to plant.plant_name, plant_path(plants.id), class: :card__title%>
     <p class="card__summary">
-      <%= prototype.catch_copy %>
+      <%= plant.plant_category %>
     </p>
-    <%= link_to "by #{prototype.user.name}", edit_user_registration_path(prototype.user.id), class: :card__user %>
+    <%= link_to "by #{plant.user.name}", edit_user_registration_path(plant.user.id), class: :card__user %>
   </div>
 </div>
+<% end %>

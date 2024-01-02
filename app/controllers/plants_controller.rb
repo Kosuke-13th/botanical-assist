@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
 
   def index
-    
+    @plants = Plant.includes(:user).order('created_at DESC')
   end
 
   def new
