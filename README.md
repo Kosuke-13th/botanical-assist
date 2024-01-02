@@ -5,6 +5,7 @@
 | Column             | Type    | Options                  |
 | ------------------ | ------- | ------------------------ |
 | name               | string  | null: false              |
+| region_id          | integer | null: false              |
 | email              | string  | null: false, unique: true|
 | encrypted_password | string  | null: false              |
 
@@ -21,8 +22,8 @@ has_many :items
 | watering_id           | integer    | null: false                    |
 | growth_time_id        | integer    | null: false                    |
 | agrochemical_time_id  | integer    | null: false                    |
-| item_text             | text       |                                |
-| plants_price          | integer    |                                |
+| plant_text            | text       |                                |
+| plant_price           | integer    |                                |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
