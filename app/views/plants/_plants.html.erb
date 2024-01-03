@@ -1,12 +1,16 @@
-<% @plants.each do |plant| %>
 <div class="card">
-  <%= link_to image_tag(plant.image, class: :card__img ), plant_path(plant.id) %>
+  <% if plants.image.attached? %>
+   <%= link_to image_tag(plants.image, class: :card__img ), plant_path(plants.id) %>
+  <% else %>
+   <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), plant_path(plants.id) %>
+  <% end %>
   <div class="card__body">
-    <%= link_to plant.plant_name, plant_path(plants.id), class: :card__title%>
+    <%= link_to plants.plant_name, plant_path(plants.id), class: :card__title%>
     <p class="card__summary">
-      <%= plant.plant_category %>
+      <%= plants.plant_category %>
     </p>
-    <%= link_to "by #{plant.user.name}", edit_user_registration_path(plant.user.id), class: :card__user %>
+    <%= link_to "by #{plants.user.name}", edit_user_registration_path(plants.user.id), class: :card__user %>
   </div>
+  <%= check_box_tag :sample %>
+  <%= label_tag :sample, '作業完了' %>
 </div>
-<% end %>

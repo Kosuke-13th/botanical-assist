@@ -47,6 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_02_074215) do
     t.integer "agrochemical_time_id", null: false
     t.text "plant_text"
     t.integer "plant_price"
+    t.datetime "start_time"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

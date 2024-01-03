@@ -43,6 +43,11 @@
     <%= f.text_area :plant_price, class: :form__text, id:"prototype_concept" %>
   </div>
 
+  <div class="field">
+    <%= f.label :start_time, "購入日" %><br />
+    <%= f.date_select :start_time %>
+  </div>
+
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>

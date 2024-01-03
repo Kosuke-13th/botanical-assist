@@ -2,6 +2,16 @@
 <main class="main">
   <div class="inner">
     <% if user_signed_in? %>
+     <%= week_calendar events: @plants do |date, events| %>
+     <%= date.day %>
+      <% events.each do |event| %>
+      <div>
+       <% if event.watering_id = 3 %>
+         <%= "水やり"%>
+       <% end %>
+     </div>
+     <% end %>
+    <% end %>
     <%# ログインしているときは以下を表示する %>
       <div class="greeting">
         こんにちは、

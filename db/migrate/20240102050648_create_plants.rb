@@ -8,7 +8,8 @@ class CreatePlants < ActiveRecord::Migration[7.0]
       t.integer    :agrochemical_time_id,  null: false
       t.text       :plant_text
       t.integer    :plant_price
-      t.references :user,             null: false, foreign_key: true
+      t.datetime   :start_time
+      t.references :user,                  null: false, foreign_key: true
       t.timestamps
     end
   end

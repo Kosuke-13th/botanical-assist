@@ -1,6 +1,5 @@
 class Plant < ApplicationRecord
 
-  validates :image,                presence: true
   validates :plant_name,           presence: true, length: { minimum: 1, maximum: 20 }
   validates :plant_category,       presence: true, length: { minimum: 1, maximum: 20 }
   validates :watering_id,          presence: true, numericality: { other_than: 1 }
