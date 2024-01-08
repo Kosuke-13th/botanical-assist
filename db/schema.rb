@@ -43,11 +43,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_02_074215) do
     t.string "plant_name", null: false
     t.string "plant_category", null: false
     t.integer "watering_id", null: false
+    t.datetime "watering_day", null: false
     t.integer "growth_time_id", null: false
+    t.datetime "growth_day", null: false
     t.integer "agrochemical_time_id", null: false
+    t.datetime "agrochemical_day", null: false
     t.text "plant_text"
     t.integer "plant_price"
-    t.datetime "start_time"
+    t.datetime "start_time", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

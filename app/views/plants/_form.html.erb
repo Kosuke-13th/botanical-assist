@@ -14,19 +14,22 @@
     水やりの頻度
     <span class="indispensable">必須</span>
   </div>
-  <%= f.collection_select(:watering_id, Watering.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:watering_id, Watering.all, :id, :name, {}, {class:"select-box", id:"watering-day"}) %>
+  <%= f.date_select :watering_day %>
 
   <div class="weight-bold-text">
     成長の時期
     <span class="indispensable">必須</span>
   </div>
   <%= f.collection_select(:growth_time_id, GrowthTime.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.date_select :growth_day %>
 
   <div class="weight-bold-text">
     薬散の時期
     <span class="indispensable">必須</span>
   </div>
   <%= f.collection_select(:agrochemical_time_id, AgrochemicalTime.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.date_select :agrochemical_day %>
 
   <div class="field">
     <%= f.label :image, "植物の写真" %><br />
@@ -44,7 +47,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :start_time, "購入日" %><br />
+    <%= f.label :start_time, "購入日（管理開始日）" %><br />
     <%= f.date_select :start_time %>
   </div>
 

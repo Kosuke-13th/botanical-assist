@@ -3,8 +3,11 @@ class Plant < ApplicationRecord
   validates :plant_name,           presence: true, length: { minimum: 1, maximum: 20 }
   validates :plant_category,       presence: true, length: { minimum: 1, maximum: 20 }
   validates :watering_id,          presence: true, numericality: { other_than: 1 }
+  validates :watering_day,         presence: true
   validates :growth_time_id,       presence: true, numericality: { other_than: 1 }
+  validates :growth_day,           presence: true
   validates :agrochemical_time_id, presence: true, numericality: { other_than: 1 }
+  validates :agrochemical_day,     presence: true
   validates :plant_text,           length: { minimum: 1, maximum: 1000 }
 
   belongs_to :user
