@@ -6,11 +6,12 @@
          <%= link_to current_user.name, edit_user_registration_path(current_user.id), class: :greeting__link%>
         さん
       </div>
-      <h1>今日の作業内容</h1>
+      <h1><%=Date.today.strftime("%Y年%m月%d日")%> 作業内容</h1>
       <div class="card__wrapper">
-       <%= render partial: "plants", collection: @plants %>
+        <% @today_watering.each do |plant| %>
+        <%= render partial: "watering", locals:{plant: plant} %>
+      <% end %>
       </div>
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       <% end %>
   </div>
 </main>

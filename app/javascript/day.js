@@ -1,18 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var wateringIdSelect = document.getElementById("watering-day"); // IDが"item-prefecture"のセレクトボックスを取得
-  var wateringDayInput = document.getElementById("start-watering-day"); // IDが"start-watering-day"の日付入力を取得
+  let checkbox = document.getElementById("work_check");
 
-  wateringIdSelect.addEventListener("change", function() {
-    if (wateringIdSelect.value == 2) { // もし選択された値が1なら
-      // :watering_dayを3日増やす処理
-      var currentDate = new Date(wateringDayInput.value);
-      currentDate.setDate(currentDate.getDate() + 3);
-
-      // 増やした日付をフォーマットしてセット
-      wateringDayInput.value = currentDate.toISOString().slice(0, 10);
+  checkbox.addEventListener("change", function() {
+    if (this.checked) {
+      // チェックが入った場合の処理
+      updateWateringDay();
+    } else {
+      // チェックが外れた場合の処理
     }
   });
-});
 
-window.addEventListener("turbo:load", day);
-window.addEventListener("turbo:render", day);
+  function updateWateringDay() {
+    Rails.ajax({
+      type: 'POST',
+      url: '/update_watering_day', // このパスは実際のルーティングに合わせて変更してください
+      data: 'authenticity_token=' + encodeURIComponent('<%= form_authenticity_token %>'),
+      success: function(data) {
+        console.log('水やりが完了しました。');
+      },
+      error: function() {
+        console.error('エラーが発生しました。');
+      }
+    });
+  }
+});
