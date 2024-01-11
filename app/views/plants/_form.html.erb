@@ -7,7 +7,7 @@
 
   <div class="field">
     <%= f.label :plant_category, "植物の種類（シダ、カンアオイ等）" %><br />
-    <%= f.text_field :plant_category, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.text_field :plant_category, id:"prototype_catch_copy" %>
   </div>
 
   <div class="weight-bold-text">
@@ -21,14 +21,14 @@
     成長の時期
     <span class="indispensable">必須</span>
   </div>
-  <%= f.collection_select(:growth_time_id, GrowthTime.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:growth_time_id, GrowthTime.all, :id, :name, {}, {class:"select-box", id:"growth-day"}) %>
   <%= f.date_select :growth_day %>
 
   <div class="weight-bold-text">
     薬散の時期
     <span class="indispensable">必須</span>
   </div>
-  <%= f.collection_select(:agrochemical_time_id, AgrochemicalTime.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+  <%= f.collection_select(:agrochemical_time_id, AgrochemicalTime.all, :id, :name, {}, {class:"select-box", id:"agrochemical-day"}) %>
   <%= f.date_select :agrochemical_day %>
 
   <div class="field">
@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= f.label :plant_price, "値段" %><br />
-    <%= f.text_area :plant_price, class: :form__text, id:"prototype_concept" %>
+    <%= f.text_field :plant_price, id:"prototype_concept" %>
   </div>
 
   <div class="field">

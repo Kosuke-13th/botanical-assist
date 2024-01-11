@@ -19,8 +19,16 @@
           </div>
           <% if user_signed_in? %>
           <%# ログインしているときは以下を表示 %>
+          <span><%= current_user.name %>
+            <ul class="user__info">
+              <li>
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+              </li>
+            </ul>
+          </span>
             <div class="nav__right">
-             <% link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__logout %>
+             <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__logout %>
              <%= link_to "新規植物登録", new_plant_path, class: :nav__btn %>
             </div>
           <%# // ログインしているときは上記を表示 %>
@@ -28,7 +36,7 @@
           <%# ログインしていないときは以下を表示するようにしましょう %>
             <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
-              <%= link_to "新規植物登録", new_user_registration_path, class: :nav__btn %>
+              <%= link_to "新規ユーザー登録", new_user_registration_path, class: :nav__btn %>
             </div>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
           <% end %>

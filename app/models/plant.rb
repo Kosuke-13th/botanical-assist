@@ -8,7 +8,7 @@ class Plant < ApplicationRecord
   validates :growth_day,           presence: true
   validates :agrochemical_time_id, presence: true, numericality: { other_than: 1 }
   validates :agrochemical_day,     presence: true
-  validates :plant_text,           length: { minimum: 1, maximum: 1000 }
+  validates :plant_text,           length: { minimum: 0, maximum: 1000 }
 
   belongs_to :user
   has_one_attached :image

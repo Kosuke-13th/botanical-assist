@@ -12,28 +12,27 @@
         </div>
 
         <div class="field">
-          地域
-          <span class="indispensable">必須</span>
+          <%= f.label :region_id, "地域" %><span class="indispensable">必須</span><br />
+          <%= f.collection_select(:region_id, Region.all, :id, :name, {}, {class:"select-box", id:"user_region"}) %>
         </div>
-        <%= f.collection_select(:region_id, Region.all, :id, :name, {}, {class:"select-box", id:"user_region"}) %>
 
         <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.label :email, "メールアドレス" %><span class="indispensable">必須</span><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+          <%= f.label :password, "パスワード（6文字以上）" %><span class="indispensable">必須</span><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password", placeholder:"6文字以上の半角英数字"  %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.label :password_confirmation, "パスワード再入力" %><span class="indispensable">必須</span><br />
           <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "新規登録", class: :form__btn  %>
+          <%= f.submit "新規ユーザー登録", class: :form__btn  %>
         </div>
       <% end %>
     </div>
