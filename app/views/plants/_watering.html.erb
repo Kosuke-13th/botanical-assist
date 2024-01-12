@@ -5,7 +5,7 @@
    <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(plant.id) %>
   <% end %>
   <div class="card__body">
-    <%= (plant.watering_day).strftime("%Y/%m/%d") %></p>
+    <%= (plant.watering_day).strftime("%Y/%m/%d") %>
     <%= link_to "#{plant.plant_name}に水をあげます。" , plant_path(plant.id), class: :card__title %>
   </div>
   <%= check_box_tag :work_check  %>
