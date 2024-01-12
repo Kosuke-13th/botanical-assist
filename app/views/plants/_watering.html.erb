@@ -6,7 +6,7 @@
   <% end %>
   <div class="card__body">
     <%= (plant.watering_day).strftime("%Y/%m/%d") %></p>
-    <%= link_to "#{plant.plant_name}に水をあげましょう。" , plant_path(plant.id), class: :card__title %>
+    <%= link_to "#{plant.plant_name}に水をあげます。" , plant_path(plant.id), class: :card__title %>
   </div>
   <%= check_box_tag :work_check  %>
   <%= label_tag :work_check, '作業完了' %>
