@@ -6,9 +6,7 @@
          <%= link_to current_user.name, edit_user_registration_path(current_user.id), class: :greeting__link%>
         さん
       </div>
-      <% if @plants ==0 %>
-          <h1>お手持ちの植物を登録しください。</h1>
-      <% else %>
+      <% if @plants.any? %>
         <% if @today_watering.any? %>
         <h1><%=Date.today.strftime("%Y年%m月%d日")%> 作業内容</h1>
          <div class="card__wrapper">
@@ -17,8 +15,8 @@
           <% end %>
          </div>
          <% else %>
-         <h1><%=Date.today.strftime("%Y年%m月%d日")%>の予定は完了しました！</h1>
-         <h1>次の予定は</h1>
+         <h1 class="card__wrapper">今日の予定は完了しました！</h1>
+         <h1>これからの予定は</h1>
           <div class="card__wrapper">
            <% @next_watering.each do |plant| %>
             <%= render partial: "nextwatering", locals:{plant: plant} %>
@@ -26,6 +24,8 @@
           </div>
          <% end %>
        <% end %>
+      <% else %>
+          <h1>こんにちは！どんな植物を育てていますか？<br>お手持ちの植物を登録してください。</h1>
       <% end %>
   </div>
 </main>

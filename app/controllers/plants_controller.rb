@@ -1,13 +1,12 @@
 class PlantsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @plants = Plant.includes(:user).order("created_at DESC")
-    @today_watering = Plant.where(watering_day: Date.today)
-    @next_watering = Plant.where.not(watering_day: Date.today)
-    @today_growth = Plant.where(growth_day: Date.today)
+    @plants = current_user.plants
+    @today_watering = current_user.plants.where(watering_day: Date.today)
+    @next_watering = current_user.plants.where.not(watering_day: Date.today)
+    @today_growth = current_user.plants.where(growth_day: Date.today)
     @today_agrochemical = Plant.where(agrochemical_day: Date.today)
   end
 

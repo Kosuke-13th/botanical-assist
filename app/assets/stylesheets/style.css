@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1fef4;
+  background-color: #d7f7ca;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -50,6 +50,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .logo {
   width: 200px;
@@ -107,8 +108,8 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #486B00;
+  border: 1px #486B00 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -327,7 +328,15 @@ a {
  /* スマホ表示 */
 @media (max-width: 599px) {
   .logo {
+    width: 240px;
+  }
+  .nav__btn{
+    font-size: 10px;
     width: 120px;
+    text-align: center;
+  }
+  .nav__right{
+    text-align: right;
   }
   .page-heading {
     font-size: 20px;
