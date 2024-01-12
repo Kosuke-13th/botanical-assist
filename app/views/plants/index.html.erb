@@ -6,11 +6,15 @@
          <%= link_to current_user.name, edit_user_registration_path(current_user.id), class: :greeting__link%>
         さん
       </div>
-      <h1><%=Date.today.strftime("%Y年%m月%d日")%> 作業内容</h1>
       <div class="card__wrapper">
-        <% @today_watering.each do |plant| %>
-        <%= render partial: "watering", locals:{plant: plant} %>
-      <% end %>
+        <% if @today_watering.any? %>
+        <h1><%=Date.today.strftime("%Y年%m月%d日")%> 作業内容</h1>
+          <% @today_watering.each do |plant| %>
+           <%= render partial: "watering", locals:{plant: plant} %>
+          <% end %>
+         <% else %>
+         <h1><%=Date.today.strftime("%Y年%m月%d日")%>の作業は完了しました。</h1>
+         <% end %>
       </div>
       <% end %>
   </div>
