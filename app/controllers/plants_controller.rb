@@ -6,6 +6,7 @@ class PlantsController < ApplicationController
   def index
     @plants = Plant.includes(:user).order("created_at DESC")
     @today_watering = Plant.where(watering_day: Date.today)
+    @next_watering = Plant.where.not(watering_day: Date.today)
     @today_growth = Plant.where(growth_day: Date.today)
     @today_agrochemical = Plant.where(agrochemical_day: Date.today)
   end
