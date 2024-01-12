@@ -6,6 +6,9 @@
          <%= link_to current_user.name, edit_user_registration_path(current_user.id), class: :greeting__link%>
         さん
       </div>
+      <% if @plants ==0 %>
+          <h1>お手持ちの植物を登録しください。</h1>
+      <% else %>
         <% if @today_watering.any? %>
         <h1><%=Date.today.strftime("%Y年%m月%d日")%> 作業内容</h1>
          <div class="card__wrapper">
@@ -22,7 +25,7 @@
            <% end %>
           </div>
          <% end %>
-
+       <% end %>
       <% end %>
   </div>
 </main>
