@@ -10,6 +10,5 @@
   <div class="card__title" >
     <%= "#{plant.plant_name}に水をあげます。" %>
   </div>
-  <%= check_box_tag :work_check  %>
-  <%= label_tag :work_check, '作業完了' %>
+    <%= button_to "作業完了", update_date_plant_path(plant), class: :form__btn %>
 </div>
