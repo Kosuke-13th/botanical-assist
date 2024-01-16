@@ -3,30 +3,31 @@
     <% if user_signed_in? %>
       <div class="greeting">
         こんにちは、
-         <%= link_to current_user.name, edit_user_registration_path(current_user.id), class: :greeting__link%>
+        <%= link_to current_user.name, edit_user_registration_path(current_user.id), class: :greeting__link%>
         さん
       </div>
       <% if @plants.any? %>
         <% if @today_watering.any? %>
-        <h1><%=Date.today.strftime("%Y年%m月%d日")%> 作業内容</h1>
-         <div class="card__wrapper">
-          <% @today_watering.each do |plant| %>
-           <%= render partial: "watering", locals:{plant: plant} %>
-          <% end %>
-         </div>
-         <% else %>
-         <h1 class="card__wrapper">今日の予定は完了しました！</h1>
-         <h1>これからの予定は</h1>
+          <h1><%=Date.today.strftime("%Y年%m月%d日")%> の作業内容は</h1>
           <div class="card__wrapper">
-           <% @next_watering.each do |plant| %>
-            <%= render partial: "nextwatering", locals:{plant: plant} %>
-           <% end %>
+            <% @today_watering.each do |plant| %>
+              <%= render partial: "watering", locals:{plant: plant} %>
+            <% end %>
           </div>
-         <% end %>
-       <% end %>
+        <% else %>
+          <div class="finish_text">
+            今日の予定は完了しました。
+          </div>
+          <h2>これからの予定は</h2>
+          <div class="card__wrapper">
+            <% @next_watering.each do |plant| %>
+            <%= render partial: "nextwatering", locals:{plant: plant} %>
+            <% end %>
+          </div>
+          <% end %>
       <% else %>
-          <h1>こんにちは！どんな植物を育てていますか？<br>お手持ちの植物を登録してください。</h1>
+        <h1>どんな植物を育ててますか？<br>植物を登録しましょう。</h1>
       <% end %>
+    <% end %>
   </div>
 </main>
-

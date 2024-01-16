@@ -2,7 +2,10 @@
   <div class="inner">
     <div class="form__wrapper">
       <h2 class="page-heading">植物情報の編集</h2>
-       <%= render partial: "form", locals: { plant: @plant } %>
+      <%= render partial: "form", locals: { plant: @plant } %>
+    </div>
+    <div class="actions">
+    <%= link_to "削除する", plant_path(@plant.id),data: { turbo_method: :delete , turbo_confirm: "本当に削除しますか？" }, class: :form__btn %>
     </div>
   </div>
 </div>

@@ -2,53 +2,50 @@
 
   <div class="field">
     <%= f.label :plant_name, "植物の名前" %><br />
-    <%= f.text_field :plant_name, id:"prototype_title" %>
+    <%= f.text_field :plant_name, id:"plant_name" %>
   </div>
 
   <div class="field">
     <%= f.label :plant_category, "植物の種類（シダ、カンアオイ等）" %><br />
-    <%= f.text_field :plant_category, id:"prototype_catch_copy" %>
+    <%= f.text_field :plant_category, id:"plant_category" %>
   </div>
 
   <div class="weight-bold-text">
     水やりの頻度
-    <span class="indispensable">必須</span>
   </div>
   <%= f.collection_select(:watering_id, Watering.all, :id, :name, {}, {class:"select-box", id:"watering-day"}) %>
-  <%= f.date_select :watering_day %>
+  <%= f.date_select :watering_day, { use_month_numbers: true, use_short_month: true } %>
 
   <div class="weight-bold-text">
     成長の時期
-    <span class="indispensable">必須</span>
   </div>
   <%= f.collection_select(:growth_time_id, GrowthTime.all, :id, :name, {}, {class:"select-box", id:"growth-day"}) %>
-  <%= f.date_select :growth_day %>
+  <%= f.date_select :growth_day, { use_month_numbers: true, use_short_month: true } %>
 
   <div class="weight-bold-text">
     薬散の時期
-    <span class="indispensable">必須</span>
   </div>
   <%= f.collection_select(:agrochemical_time_id, AgrochemicalTime.all, :id, :name, {}, {class:"select-box", id:"agrochemical-day"}) %>
-  <%= f.date_select :agrochemical_day %>
+  <%= f.date_select :agrochemical_day, { use_month_numbers: true, use_short_month: true } %>
 
   <div class="field">
     <%= f.label :image, "植物の写真" %><br />
-    <%= f.file_field :image, id:"prototype_image" %>
+    <%= f.file_field :image, id:"plant_image" %>
   </div>
 
   <div class="field">
     <%= f.label :plant_text, "備考" %><br />
-    <%= f.text_area :plant_text, class: :form__text, id:"prototype_concept" %>
+    <%= f.text_area :plant_text, class: :form__text, id:"plant_text" %>
   </div>
 
   <div class="field">
     <%= f.label :plant_price, "値段" %><br />
-    <%= f.text_field :plant_price, id:"prototype_concept" %>
+    <%= f.text_field :plant_price, id:"plant_price" %>
   </div>
 
   <div class="field">
     <%= f.label :start_time, "購入日（管理開始日）" %><br />
-    <%= f.date_select :start_time %>
+    <%= f.date_select :start_time, { use_month_numbers: true, use_short_month: true } %>
   </div>
 
   <div class="actions">

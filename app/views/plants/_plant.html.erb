@@ -1,13 +1,11 @@
 <div class="card">
   <% if plant.image.attached? %>
-   <%= link_to image_tag(plant.image, class: :card__img ), edit_plant_path(plant.id) %>
-  <% else %>
-   <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(plant.id) %>
+    <%= link_to image_tag(plant.image, class: :card__img ), edit_plant_path(plant.id) %>
+    <% else %>
+    <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(plant.id) %>
   <% end %>
-   <div class="card__body">
-    <%= link_to plant.plant_name, plant_path(plant.id), class: :card__title%>
-     <p class="card__summary">
-      <%= plant.plant_category %>
-    </p>
+  <div class="card__body">
+    <%= link_to plant.plant_name, edit_plant_path(plant.id), class: :card__title%>
+    <p class="card__category"><%= plant.plant_category %></p>
   </div>
 </div>
