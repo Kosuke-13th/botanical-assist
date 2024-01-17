@@ -4,9 +4,9 @@
     <%= "#{plant.plant_name}に水をあげる予定です。"%>
   </div>
   <% if plant.image.attached? %>
-   <%= link_to image_tag(plant.image, class: :card__img ), edit_plant_path(plant.id) %>
+   <%= link_to image_tag(plant.image, class: :card__img ), plant_path(plant.id) %>
   <% else %>
-   <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(plant.id) %>
+   <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), plant_path(plant.id) %>
   <% end %>
 
 

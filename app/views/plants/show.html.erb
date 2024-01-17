@@ -4,23 +4,42 @@
       <p class="plant__hedding">
         <%= @plant.plant_name %>
       </p>
-        <div class="prototype__manage">
+        <div class="plant__manage">
           <%= link_to "編集する", edit_plant_path(@plant.id), class: :form__btn %>
         </div>
-      <div class="prototype__image">
-        <%= image_tag @plant.image %>
-      </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+   <% if @plant.image.attached? %>
+    <div class="plant__image">
+      <%= link_to image_tag(@plant.image, class: :card__img ), edit_plant_path(@plant.id) %>
+    </div>
+    <% else %>
+     <div class="plant__image">
+      <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(@plant.id) %>
+    <% end %>
+      <div class="plant__body">
+        <div class="plant__detail">
           <p class="detail__title">植物名</p>
           <p class="detail__message">
             <%= @plant.plant_name %>
           </p>
         </div>
-        <div class="prototype__detail">
-          <p class="detail__title"></p>
+        <div class="plant__detail">
+          <p class="detail__title">購入日</p>
           <p class="detail__message">
+            <%= @plant.start_time.strftime("%Y年%m月%d日") %>
+          </p>
+        <div class="pplant__detail">
+          <p class="detail__title">値段</p>
+          <p class="detail__message">
+            <%= @plant.plant_price %>円
+          </p>
+        <div class="plant__detail">
+          <p class="detail__title">備考</p>
+          <p class="detail__message">
+            <% if @plant.plant_text = nil%>
             <%= @plant.plant_text %>
+            <% else %>
+            <%= "無し" %>
+            <% end %>
           </p>
         </div>
       </div>
