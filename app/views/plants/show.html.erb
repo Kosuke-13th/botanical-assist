@@ -2,19 +2,21 @@
   <div class="inner">
     <div class="plant__wrapper">
       <p class="plant__hedding">
-        <%= @plant.plant_name %>
+      <%= @plant.plant_name %>
       </p>
         <div class="plant__manage">
-          <%= link_to "編集する", edit_plant_path(@plant.id), class: :form__btn %>
+        <%= link_to "編集する", edit_plant_path(@plant.id), class: :form__btn %>
         </div>
-   <% if @plant.image.attached? %>
-    <div class="plant__image">
-      <%= link_to image_tag(@plant.image, class: :card__img ), edit_plant_path(@plant.id) %>
-    </div>
-    <% else %>
-     <div class="plant__image">
-      <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(@plant.id) %>
-    <% end %>
+        <% if @plant.image.attached? %>
+        <div class="plant__image">
+        <%= link_to image_tag(@plant.image, class: :card__img ), edit_plant_path(@plant.id) %>
+        </div>
+        <% else %>
+        <div class="plant__image">
+        <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(@plant.id) %>
+        </div>
+        <% end %>
+        </div>
       <div class="plant__body">
         <div class="plant__detail">
           <p class="detail__title">植物名</p>
@@ -27,11 +29,13 @@
           <p class="detail__message">
             <%= @plant.start_time.strftime("%Y年%m月%d日") %>
           </p>
-        <div class="pplant__detail">
+        </div>
+        <div class="plant__detail">
           <p class="detail__title">値段</p>
           <p class="detail__message">
             <%= @plant.plant_price %>円
           </p>
+        </div>
         <div class="plant__detail">
           <p class="detail__title">備考</p>
           <p class="detail__message">
@@ -42,7 +46,6 @@
             <% end %>
           </p>
         </div>
-      </div>
     </div>
   </div>
 </main>

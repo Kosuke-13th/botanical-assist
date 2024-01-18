@@ -187,6 +187,15 @@ a {
   margin-bottom: 10px;
 }
 
+.indispensable {
+  background: #7d4427;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
