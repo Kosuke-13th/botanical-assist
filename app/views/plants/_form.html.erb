@@ -6,7 +6,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :plant_category, "植物の種類（シダ、ビカクシダ等）" %><span class="indispensable">必須</span><br />
+    <%= f.label :plant_category, "植物の種類（学名、分類名等）" %><span class="indispensable">必須</span><br />
     <%= f.text_field :plant_category, id:"plant_category" %>
   </div>
 
@@ -34,7 +34,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :plant_text, "備考" %><br />
+    <%= f.label :plant_text, "備考（置き場等）" %><br />
     <%= f.text_area :plant_text, class: :form__text, id:"plant_text" %>
   </div>
 
