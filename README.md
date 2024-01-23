@@ -72,6 +72,7 @@ has_many :items
 | agrochemical_day      | datetime   | null: false                    |
 | plant_text            | text       |                                |
 | plant_price           | integer    |                                |
+| start_time            |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
