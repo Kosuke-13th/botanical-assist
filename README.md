@@ -43,7 +43,7 @@ https://botanical-assist.onrender.com
 
 # データベース設計
 
-  
+  ![画像](assets/images/er.png)
 
 ## users テーブル
 
@@ -72,7 +72,7 @@ has_many :items
 | agrochemical_day      | datetime   | null: false                    |
 | plant_text            | text       |                                |
 | plant_price           | integer    |                                |
-| start_time            |
+| start_time            | datetime   | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
