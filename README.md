@@ -32,7 +32,8 @@ https://botanical-assist.onrender.com
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1nSNIRaexLVh-KC6fqra9_BGEyC5fOeXAqJ4UAQlw2lY/edit#gid=982722306)
   
 # 実装した機能についての画像やGIFおよびその説明
-  
+新規植物登録から作業完了動作
+[![Image from Gyazo](https://i.gyazo.com/fe55b9a9070f40704e7d4abb60813c46.gif)](https://gyazo.com/fe55b9a9070f40704e7d4abb60813c46)
   
 # 実装予定の機能
 ## 販売店へ問い合わせ
@@ -43,8 +44,8 @@ https://botanical-assist.onrender.com
 
 # データベース設計
 
-  ![画像](assets/images/er.png)
-
+  [![Image from Gyazo](https://i.gyazo.com/5ae0a06e1fb443a5cc28681b03e436fd.png)](https://gyazo.com/5ae0a06e1fb443a5cc28681b03e436fd)
+  
 ## users テーブル
 
 | Column             | Type    | Options                  |
@@ -78,3 +79,18 @@ has_many :items
 ### Association
 
 belongs_to :user
+
+
+# 画面遷移図
+
+[![Image from Gyazo](https://i.gyazo.com/6d5fc0153b0b3281c5905c75dd70e15d.png)](https://gyazo.com/6d5fc0153b0b3281c5905c75dd70e15d)  
+
+# 開発環境
+* フロントエンド  
+* バックエンド  
+* インフラ  
+* テキストエディタ  
+* タスク管理  
+  
+# 工夫したポイント
+* 
