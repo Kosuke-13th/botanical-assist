@@ -1,13 +1,17 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: [:update_date, :show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index]
+  before_action :move_to_index, only: [:show, :edit, :update, :destroy]
 
   def index
+    if user_signed_in?
     @plants = current_user.plants
     @today_watering = current_user.plants.where("watering_day = ? OR watering_day < ?", Date.today, Date.today)
     @next_watering = current_user.plants.where("watering_day > ?", Date.today)
     @today_growth = current_user.plants.where(growth_day: Date.today)
     @today_agrochemical = current_user.plants.where(agrochemical_day: Date.today)
+    else
+    end
   end
 
   def new
@@ -61,6 +65,11 @@ class PlantsController < ApplicationController
 
   def set_plant
     @plant = Plant.find(params[:id])
+  end
+
+  def move_to_index
+    return if current_user.id == @plant.user_id
+    redirect_to action: :index
   end
 
 end

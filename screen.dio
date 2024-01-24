@@ -1,56 +1,50 @@
 <mxfile host="65bd71144e">
     <diagram id="gNYLh9aqeYkSMwa-pKG7" name="ページ1">
-        <mxGraphModel dx="1439" dy="779" grid="1" gridSize="1" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1199" dy="779" grid="1" gridSize="1" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="255" value="ログインページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="235" y="110" width="171" height="40" as="geometry"/>
+                <mxCell id="255" value="ログインページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="235" y="110" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="256" value="トップページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+                <mxCell id="256" value="トップページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
                     <mxGeometry x="33" y="111" width="175" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="257" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+                <mxCell id="257" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" parent="1" vertex="1">
                     <mxGeometry x="207" y="126" width="27" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="258" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="275">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="419" y="131" as="sourcePoint"/>
-                        <mxPoint x="417" y="203" as="targetPoint"/>
-                    </mxGeometry>
+                <mxCell id="259" value="ユーザー新規登録ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="235" y="179" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="259" value="ユーザー新規登録ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="235" y="179" width="175" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="261" value="" style="endArrow=none;html=1;rounded=0;exitX=0.593;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="257" target="259">
+                <mxCell id="261" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="268" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="118" y="153" as="sourcePoint"/>
+                        <mxPoint x="221" y="131" as="sourcePoint"/>
                         <mxPoint x="118" y="191" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="221" y="199"/>
+                            <mxPoint x="221" y="331"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="266" value="新規植物登録ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="432" y="112" width="171" height="40" as="geometry"/>
+                <mxCell id="275" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="259" width="12" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="267" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="1">
-                    <mxGeometry x="405" y="126" width="27" height="10" as="geometry"/>
+                <mxCell id="266" value="新規植物登録ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="234" y="244" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="275" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="1">
-                    <mxGeometry x="419" y="195" width="13" height="10" as="geometry"/>
+                <mxCell id="284" value="" style="group" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="234" y="311" width="355" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="284" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="432" y="179" width="355" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="268" value="植物詳細ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="284">
+                <mxCell id="268" value="植物詳細ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="284" vertex="1">
                     <mxGeometry width="171" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="277" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="284">
+                <mxCell id="277" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" parent="284" vertex="1">
                     <mxGeometry x="171" y="15" width="13" height="10" as="geometry"/>
                 </mxCell>
-                <mxCell id="278" value="植物編集ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="284">
+                <mxCell id="278" value="植物編集ページ" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=center;" parent="284" vertex="1">
                     <mxGeometry x="184" width="171" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="287" value="" style="line;strokeWidth=1;rotatable=0;dashed=0;labelPosition=right;align=left;verticalAlign=middle;spacingTop=0;spacingLeft=6;points=[];portConstraint=eastwest;" vertex="1" parent="1">
+                    <mxGeometry x="221" y="194" width="14" height="10" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
