@@ -14,6 +14,8 @@ https://botanical-assist.onrender.com
 * パスワード：1111kk  
 
 # 利用方法
+※現在はRenderの無料枠にてアプリのデプロイを行っているので、時間が立つと投稿画像が消えてしまいます。  
+
 ## 植物管理
 1. トップページのヘッダーからユーザー新規登録を行う。  
 1. 新規植物登録ボタンから、  
@@ -45,8 +47,8 @@ https://botanical-assist.onrender.com
 
 # データベース設計
 
-  [![Image from Gyazo](https://i.gyazo.com/5ae0a06e1fb443a5cc28681b03e436fd.png)](https://gyazo.com/5ae0a06e1fb443a5cc28681b03e436fd)
-  
+[![Image from Gyazo](https://i.gyazo.com/e38ba56afae0d3f648bbd6628519c7e9.png)](https://gyazo.com/e38ba56afae0d3f648bbd6628519c7e9)   
+
 # 画面遷移図
 
 [![Image from Gyazo](https://i.gyazo.com/5678f824e25db228dcaa3adb281d305d.png)](https://gyazo.com/5678f824e25db228dcaa3adb281d305d)
