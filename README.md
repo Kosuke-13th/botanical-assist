@@ -34,9 +34,17 @@ https://botanical-assist.onrender.com
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1nSNIRaexLVh-KC6fqra9_BGEyC5fOeXAqJ4UAQlw2lY/edit#gid=982722306)
   
 # 実装した機能についての画像やGIFおよびその説明
-ログイン後に当日行うタスクが表示される。「作業完了」ボタンを押したら次の予定として表示される。
+### ユーザー新規登録をすると、「どんな植物を育てていますか？植物を登録しましょう」と表示される。  
+[![Image from Gyazo](https://i.gyazo.com/1d4480155e33e4c8f98a08c0141d461d.gif)](https://gyazo.com/1d4480155e33e4c8f98a08c0141d461d)  
+  
+### 新規植物を登録すると、当日の必要なタスクが表示される。
+[![Image from Gyazo](https://i.gyazo.com/93b778029b4bc7baa2ffbe0e5d29bf87.gif)](https://gyazo.com/93b778029b4bc7baa2ffbe0e5d29bf87)  
 
+  
+### ログイン後に当日の必要なタスクが表示される。「作業完了」ボタンを押したら次の予定として表示される。
+  
 [![Image from Gyazo](https://i.gyazo.com/ade36d8671935d80e9cc48240bd00186.gif)](https://gyazo.com/ade36d8671935d80e9cc48240bd00186)
+  
   
 # 実装予定の機能
 ## 販売店へ問い合わせ
