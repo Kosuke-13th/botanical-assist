@@ -8,8 +8,8 @@ Botanical-Assist
 https://botanical-assist.onrender.com
 
 # テスト用アカウント
-* Basic認証パスワード：1318  
 * Basic認証ID：test  
+* Basic認証パスワード：1318  
 * メールアドレス：test@gmail.com  
 * パスワード：1111kk  
 
