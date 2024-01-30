@@ -1,0 +1,14 @@
+<div class="card">
+  <% if plant.image.attached? %>
+    <%= link_to image_tag(plant.image, class: :card__img ), plant_path(plant.id) %>
+    <% else %>
+    <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), plant_path(plant.id) %>
+  <% end %>
+  <div class="card__body">
+    <%= (plant.agrochemical_day).strftime("%Y/%m/%d") %>
+  </div>
+  <div class="card__title" >
+    <%= "#{plant.plant_name}に<span style='color: red;'>薬散</span>をします。".html_safe %>
+  </div>
+    <%= button_to "薬散完了", update_agrochemical_date_plant_path(plant), class: :form__btn %>
+</div>

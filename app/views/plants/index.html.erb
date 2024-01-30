@@ -7,11 +7,14 @@
         さん
       </div>
       <% if @plants.any? %>
-        <% if @today_watering.any? %>
+        <% if @today_watering.any? || @today_agrochemical.any?%>
           <h1><%=Date.today.strftime("%Y年%m月%d日")%> の作業内容は</h1>
           <div class="card__wrapper">
             <% @today_watering.each do |plant| %>
               <%= render partial: "watering", locals:{plant: plant} %>
+            <% end %>
+            <% @today_agrochemical.each do |plant| %>
+              <%= render partial: "agrochemical", locals:{plant: plant} %>
             <% end %>
           </div>
         <% else %>
@@ -22,6 +25,9 @@
           <div class="card__wrapper">
             <% @next_watering.each do |plant| %>
             <%= render partial: "nextwatering", locals:{plant: plant} %>
+            <% end %>
+            <% @next_agrochemical.each do |plant| %>
+            <%= render partial: "nextagrochemical", locals:{plant: plant} %>
             <% end %>
           </div>
           <% end %>

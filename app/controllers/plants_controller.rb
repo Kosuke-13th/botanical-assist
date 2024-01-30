@@ -1,15 +1,16 @@
 class PlantsController < ApplicationController
-  before_action :set_plant, only: [:update_date, :show, :edit, :update, :destroy]
+  before_action :set_plant, only: [:update_date, :update_agrochemical_date, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
   before_action :move_to_index, only: [:show, :edit, :update, :destroy]
 
   def index
     if user_signed_in?
     @plants = current_user.plants
-    @today_watering = current_user.plants.where("watering_day = ? OR watering_day < ?", Date.today, Date.today)
-    @next_watering = current_user.plants.where("watering_day > ?", Date.today)
+    @today_watering = current_user.plants.where("watering_day = ? OR watering_day < ?", Date.today, Date.today).order(:watering_day)
+    @next_watering = current_user.plants.where("watering_day > ?", Date.today).order(:watering_day)
+    @today_agrochemical = current_user.plants.where("agrochemical_day = ? OR agrochemical_day < ?", Date.today, Date.today).order(:agrochemical_day)
+    @next_agrochemical = current_user.plants.where("agrochemical_day > ?", Date.today).order(:agrochemical_day)
     @today_growth = current_user.plants.where(growth_day: Date.today)
-    @today_agrochemical = current_user.plants.where(agrochemical_day: Date.today)
     else
     end
   end
@@ -55,6 +56,21 @@ class PlantsController < ApplicationController
         @plant.update(watering_day: Date.today + 7.days)
       end
       redirect_to root_path
+  end
+
+  def update_agrochemical_date
+    if @plant.agrochemical_time_id == 2
+      @plant.update(agrochemical_day: Date.today + 30.days)
+    elsif @plant.agrochemical_time_id == 3
+      @plant.update(agrochemical_day: Date.today + 90.days)
+    elsif @plant.agrochemical_time_id == 4
+      if Date.today.month >= 12 || (Date.today.month >= 1 && Date.today.month <= 5)
+        @plant.update(agrochemical_day: Date.new(Date.today.year, 3, 1))
+      elsif Date.today.month >= 6 && Date.today.month <= 11
+        @plant.update(agrochemical_day: Date.new(Date.today.year, 9, 1))
+      end
+    end
+    redirect_to root_path
   end
 
   private

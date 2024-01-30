@@ -1,7 +1,7 @@
  <div class="card">
   <div class="card__body">
-    <%= (plant.watering_day).strftime("%Y年%m月%d日") %><br  />
-    <%= "#{plant.plant_name}に<span style='color: blue;'>水</span>をあげる予定です。".html_safe %>
+    <%= (plant.agrochemical_day).strftime("%Y年%m月%d日") %><br  />
+    <%= "#{plant.plant_name}の<span style='color: red;'>薬散</span>の予定です。".html_safe %>
   </div>
   <% if plant.image.attached? %>
    <%= link_to image_tag(plant.image, class: :card__img ), plant_path(plant.id) %>

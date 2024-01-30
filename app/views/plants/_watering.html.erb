@@ -8,7 +8,12 @@
     <%= (plant.watering_day).strftime("%Y/%m/%d") %>
   </div>
   <div class="card__title" >
-    <%= "#{plant.plant_name}に水をあげます。" %>
+    <% if plant.growth_time_id == 2 %>
+    <%= "成長期です。"%><br  />
+    <% else %>
+    <% end %>
+
+    <%= "#{plant.plant_name}に<span style='color: blue;'>水</span>をあげます。".html_safe %>
   </div>
-    <%= button_to "作業完了", update_date_plant_path(plant), class: :form__btn %>
+    <%= button_to "潅水完了", update_date_plant_path(plant), class: :form__btn %>
 </div>

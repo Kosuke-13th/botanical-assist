@@ -10,9 +10,7 @@
         <% if @plant.image.attached? %>
         <div class="plant__image">
         <%= link_to image_tag(@plant.image, class: :card__img ), edit_plant_path(@plant.id) %>
-        </div>
         <% else %>
-        <div class="plant__image">
         <%= link_to image_tag("/assets/noimage.jpg", class: :card__img), edit_plant_path(@plant.id) %>
         </div>
         <% end %>

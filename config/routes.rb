@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :plants do
     member do
     post 'update_date'
+    post 'update_agrochemical_date'
     end
   end
 
