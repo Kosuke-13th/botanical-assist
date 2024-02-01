@@ -8,6 +8,13 @@
     <%= (plant.agrochemical_day).strftime("%Y/%m/%d") %>
   </div>
   <div class="card__title" >
+    <% if plant.growth_time_id == 2 && ((Date.today.month >= 3 && Date.today.month <= 5) || (Date.today.month >= 10 && Date.today.month <= 11)) %>
+    <%= "春・秋が成長期です。"%><br  />
+    <% elsif plant.growth_time_id == 3 && (Date.today.month >= 6 && Date.today.month <= 9) %>
+    <%= "夏が成長期です。"%><br  />
+    <% elsif plant.growth_time_id == 4 && ((Date.today.month >= 11 && Date.today.month <= 12) || (Date.today.month >= 1 && Date.today.month <= 3)) %>
+    <%= "冬が成長期です。"%><br  />
+    <% end %>
     <%= "#{plant.plant_name}に<span style='color: red;'>薬散</span>をします。".html_safe %>
   </div>
     <%= button_to "薬散完了", update_agrochemical_date_plant_path(plant), class: :form__btn %>
